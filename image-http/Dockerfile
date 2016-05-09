@@ -1,9 +1,11 @@
-FROM debian:jessi
+FROM debian:jessie
 
 MAINTAINER jorgechavez77
 
-RUN apt-get install -y apache2
+RUN apt-get update
 
-CMD ["/etc/init.d/apache2 start"]
+RUN apt-get -y install apache2
+
+RUN service apache2 start
 
 EXPOSE 80
